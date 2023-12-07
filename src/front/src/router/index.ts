@@ -5,13 +5,18 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component: () => import('../views/home/HomePage.vue'),
+      component: () => import('../layouts/HomeLayout.vue'),
       children: [
         {
           path:'',
           name: 'home',
-          component: () => import('../layouts/HomeLayout.vue')
-        }
+          component: () => import('../views/home/HomePage.vue')
+        },
+        {
+          path:'notfound',
+          name: 'notfound',
+          component: () => import('@/views/NotFound/NotFound.page.vue')
+        },
       ]
     },
   ]
